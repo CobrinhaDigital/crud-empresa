@@ -1,24 +1,29 @@
 import os 
+# import touch 
+from pathlib import Path 
 
 def criarDep(): 
-    inputDep = input()
-    depPath = Path("/departamentos/{inputDep}")
+    inputDep = input() 
+    # depPath = "empresa/departamentos/{inputDep}"
 
-    os.mkdir({depPath})
+    os.mkdir("departamentos/juridico")
 
-    os.mkdir("{depPath}/projetos")
+    os.mkdir("departamentos/juridico/projetos")
     with open("lista.txt", "w") as file:
         file.write("")
 
-    os.mkdir("{depPath}/funcionarios") 
+    os.mkdir("departamentos/juridico/funcionarios")
     with open("lista.txt", "w") as file:
         file.write("")
 
 def verDep(): 
     #lista todos os departamentos
+    print(os.listdir("./departamentos"))
 
-def editarDep():
-    #edita nome do departamento 
+# def editarDep():
+#     #edita nome do departamento 
 
-def apagarDep():  
-    #apaga pasta do departamento 
+# def apagarDep():  
+#     #apaga pasta do departamento 
+
+verDep()
