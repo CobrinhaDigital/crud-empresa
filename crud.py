@@ -14,11 +14,16 @@ def criarDep():
     with open("lista.txt", "w") as file:
         file.write("")
 
-def verDep(): 
+def verDeps(): 
     #lista todos os departamentos
+    with open("lista.txt", "r") as file: 
+        file.read
 
-def editarDep():
-    #edita nome do departamento 
+# def editarDep():
+#     #edita nome do departamento 
 
-def apagarDep():  
-    #apaga pasta do departamento 
+# def apagarDep():  
+#     #apaga pasta do departamento 
+
+
+verDep()
