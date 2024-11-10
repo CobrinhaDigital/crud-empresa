@@ -1,8 +1,21 @@
+import app.relations as relations
+
 def criarProjeto():
     arquivo = open("tables/projetos.txt", "a")
     númeroProjeto = int(input("Insira o número do projeto que deseja criar:\n> "))
     nomeProjeto = str(input("Insira o nome do novo projeto:\n> "))
     localProjeto = str(input("Insira o local do novo projeto:\n> "))
+    
+    quantidadeFuncionários = int(input("Insira quantos funcionários irão trabalhar nesse projeto:\n> "))
+    for i in quantidadeFuncionários:
+        númeroFuncionário = int(input(f"Insira o número do {i}º funcionário a trabalhar nesse projeto:\n> "))
+        relations.add_funcionario_projeto(númeroFuncionário, númeroProjeto)
+
+    quantidadeDepartamentos = int(input("Insira quantos departamentos irão atuar nesse projeto:\n> "))
+    for i in quantidadeDepartamentos:
+        númeroDepartamento = int(input(f"Insira o número do {i}º departamento a atuar nesse projeto:\n> "))
+        relations.add_departamento_projeto(númeroDepartamento, númeroProjeto)
+
     arquivo.write(f"{númeroProjeto}|{nomeProjeto}|{localProjeto}|\n")
     arquivo.close()
     print("\nProjeto criado com sucesso!\n")
