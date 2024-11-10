@@ -9,8 +9,13 @@ while True:
     opcao = int(input("0 - Criar\n1 - Visualizar\n2 - Editar\n3 - Deletar\n4 - Sair\n> "))
     if (opcao == 4):
         break
-    print("Informe a tabela em que deseja fazer a acao:\n")
-    tabela = int(input("0 - Funcionarios\n1 - Projetos\n2 - Departamentos\n> "))
+
+    if (opcao == 1):
+        print("Informe a tabela em que deseja fazer a acao:\n")
+        tabela = int(input("0 - Funcionarios\n1 - Projetos\n2 - Departamentos\n3 - Relações\n> "))
+    else:
+        print("Informe a tabela em que deseja fazer a acao:\n")
+        tabela = int(input("0 - Funcionarios\n1 - Projetos\n2 - Departamentos\n> "))
 
     if (opcao == 0):
         if (tabela == 0):
