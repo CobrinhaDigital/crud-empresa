@@ -1,5 +1,5 @@
 def criarProjeto():
-    arquivo = open("projetos.txt", "a")
+    arquivo = open("tables/projetos.txt", "a")
     númeroProjeto = input("Insira o número do projeto que deseja criar:\n> ")
     nomeProjeto = input("Insira o nome do novo projeto:\n> ")
     localProjeto = input("Insira o local do novo projeto:\n> ")
@@ -9,7 +9,7 @@ def criarProjeto():
     pass
 
 def editarProjeto():
-    arquivo = open("projetos.txt", "r")
+    arquivo = open("tables/projetos.txt", "r")
     projetos = arquivo.readlines()
     
     for i,v in enumerate(projetos):
@@ -35,7 +35,7 @@ def editarProjeto():
     for i,v in enumerate(projetos):
         projetos[i] = f"{v[0]}|{v[1]}|{v[2]}|\n"
     
-    arquivo = open("projetos.txt", "w")
+    arquivo = open("tables/projetos.txt", "w")
     arquivo.writelines(projetos)
     
     if foiEditado == True:
@@ -47,7 +47,7 @@ def editarProjeto():
     pass
 
 def apagarProjeto():
-    arquivo = open("projetos.txt", "r")
+    arquivo = open("tables/projetos.txt", "r")
     projetos = arquivo.readlines()
     
     for i,v in enumerate(projetos):
@@ -68,7 +68,7 @@ def apagarProjeto():
     for i,v in enumerate(projetos):
         projetos[i] = f"{v[0]}|{v[1]}|{v[2]}|\n"
     
-    arquivo = open("projetos.txt", "w")
+    arquivo = open("tables/projetos.txt", "w")
     arquivo.writelines(projetos)
 
     if foiApagado == True:
@@ -80,7 +80,7 @@ def apagarProjeto():
     pass
 
 def listarProjetos():
-    arquivo = open("projetos.txt", "r")
+    arquivo = open("tables/projetos.txt", "r")
     projetos = arquivo.readlines()
     
     for i,v in enumerate(projetos):

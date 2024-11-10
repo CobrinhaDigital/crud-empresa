@@ -1,6 +1,6 @@
 # Função para Criar um funcionário no arquivo.
 def create_employee():
-    employee = open("funcionarios.txt", "a")
+    employee = open("tables/funcionarios.txt", "a")
 
     name = input("Insira o nome do funcionario que deseja cadastrar:\n> ")
     numEmployee = input("Insira o numero do funcionario:\n> ")
@@ -20,7 +20,7 @@ def create_employee():
 
 # Função para Editar um funcionário no arquivo.
 def edit_employee():
-    archive = open("funcionarios.txt", "r")
+    archive = open("tables/funcionarios.txt", "r")
     employees = archive.readlines()
     
     for i,v in enumerate(employees):
@@ -46,7 +46,7 @@ def edit_employee():
     for i,v in enumerate(employees):
         employees[i] = f"{v[0]}|{v[1]}|{v[2]}|{v[3]}|{v[4]}|{v[5]}|{v[6]}|{v[7]}|\n"
     
-    archive = open("funcionarios.txt", "w")
+    archive = open("tables/funcionarios.txt", "w")
     archive.writelines(employees)
     
     if foiEditado == True:
@@ -60,7 +60,7 @@ def edit_employee():
 
 # Função para Deletar um funcionário no arquivo.
 def delete_employee():
-    archive = open("funcionarios.txt", "r")
+    archive = open("tables/funcionarios.txt", "r")
     employees = archive.readlines()
     
     for i,v in enumerate(employees):
@@ -81,7 +81,7 @@ def delete_employee():
     for i,v in enumerate(employees):
         employees[i] = f"{v[0]}|{v[1]}|{v[2]}|{v[3]}|{v[4]}|{v[5]}|{v[6]}|{v[7]}|\n"
     
-    archive = open("funcionarios.txt", "w")
+    archive = open("tables/funcionarios.txt", "w")
     archive.writelines(employees)
 
     if foiApagado == True:
@@ -95,7 +95,7 @@ def delete_employee():
 
 # Função para Visualizar os funcionários cadastrados no arquivo.
 def get_all_employees():
-    archive = open("funcionarios.txt", "r")
+    archive = open("tables/funcionarios.txt", "r")
     employees = archive.readlines()
     
     for i,v in enumerate(employees):

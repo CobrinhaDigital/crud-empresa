@@ -3,18 +3,18 @@ from tabulate import tabulate
 
 # relação departamento e projeto
 def add_departamento_projeto(numero_departamento: int, numero_projeto: int):
-    with open("departamento_projeto.txt", "a") as arquivo:
+    with open("tables/departamento_projeto.txt", "a") as arquivo:
         arquivo.write(f"{numero_departamento} | {numero_projeto}\n")
 
 # relação entre funcionário e projeto
 def add_funcionario_projeto(numero_funcionario: int, numero_projeto: int):
-    with open("funcionario_projeto.txt", "a") as arquivo:
+    with open("tables/funcionario_projeto.txt", "a") as arquivo:
         arquivo.write(f"{numero_funcionario} | {numero_projeto}\n")
         arquivo.close()
 
 def tabela_departamento_projeto():
     try:
-        with open("departamento_projeto.txt", "r") as arquivo:
+        with open("tables/departamento_projeto.txt", "r") as arquivo:
             relacoes = arquivo.readlines()
             
         tabela = []
@@ -32,7 +32,7 @@ def tabela_departamento_projeto():
 
 def tabela_funcionario_projeto():
     try:
-        with open("funcionario_projeto.txt", "r") as arquivo:
+        with open("tables/funcionario_projeto.txt", "r") as arquivo:
             relacoes = arquivo.readlines()
             
         tabela = []

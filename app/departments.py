@@ -6,14 +6,14 @@ def criarDepartamento():
     gerente = input("Nome do gerente: \b") 
     numero = input("Número do departamento: \b")
 
-    with open("departamentos.txt", "a") as file: 
+    with open("tables/departamentos.txt", "a") as file: 
         file.write("\n" + nome + " | " + gerente + " | " + numero + "\b")
         
     file.close()
 
 def verDepartamento(): 
     #mostra todos os departamentos 
-    with open("departamentos.txt", "r") as file: 
+    with open("tables/departamentos.txt", "r") as file: 
         content = file.read()
         print(content)
 
@@ -22,7 +22,7 @@ def apagarDepartamento():
     Para apagar departamento, informe ->""")
     nome = input("Nome do departamento: \b")
     
-    with open("departamentos.txt", "r") as file: 
+    with open("tables/departamentos.txt", "r") as file: 
         linhas = file.readlines()
         linhasMantidas = []
         
@@ -30,7 +30,7 @@ def apagarDepartamento():
             if nome not in linha: 
                 linhasMantidas.append(linha)
                 
-    with open("departamentos.txt", "w") as file: 
+    with open("tables/departamentos.txt", "w") as file: 
          file.writelines(linhasMantidas)
          
     file.close()
@@ -47,10 +47,10 @@ def editarDepartamento():
         nomeAntigo = input("Digite o nome do departamento: \b")
         nomeNovo = input("Digite o novo nome do departamento: \b")
         
-        with open("departamentos.txt", "r") as file:
+        with open("tables/departamentos.txt", "r") as file:
             linhas = file.readlines()
             
-        with open("departamentos.txt", "w") as file:
+        with open("tables/departamentos.txt", "w") as file:
             for linha in linhas: 
                 if nomeAntigo in linha:
                     linha = linha.replace(nomeAntigo, nomeNovo)
@@ -62,10 +62,10 @@ def editarDepartamento():
         gerenteAntigo = input("Digite o nome do gerente: \b")
         gerenteNovo = input("Digite o novo nome do gerente: \b") 
         
-        with open("departamentos.txt", "r") as file:
+        with open("tables/departamentos.txt", "r") as file:
             linhas = file.readlines()
             
-        with open("departamentos.txt", "w") as file:
+        with open("tables/departamentos.txt", "w") as file:
             for linha in linhas: 
                 if gerenteAntigo in linha:
                     linha = linha.replace(gerenteAntigo, gerenteNovo)
@@ -77,10 +77,10 @@ def editarDepartamento():
         numeroAntigo = input("Digite o número do departamento: \b")
         numeroNovo = input("Digite o novo número do departamento: \b")
         
-        with open("departamentos.txt", "r") as file:
+        with open("tables/departamentos.txt", "r") as file:
             linhas = file.readlines()
             
-        with open("departamentos.txt", "w") as file:
+        with open("tables/departamentos.txt", "w") as file:
             for linha in linhas: 
                 if numeroAntigo in linha:
                     linha = linha.replace(numeroAntigo, numeroNovo)
