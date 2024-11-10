@@ -2,14 +2,14 @@
 def create_employee():
     employee = open("tables/funcionarios.txt", "a")
 
-    name = input("Insira o nome do funcionario que deseja cadastrar:\n> ")
-    numEmployee = input("Insira o numero do funcionario:\n> ")
-    cpf = input("Insira o CPF do funcionario:\n> ")
-    address = input("Insira o endereco do funcionario:\n> ")
-    salary = input("Insira o salario do funcionario:\n> ")
-    gender = input("Insira o genero do funcionario:\n> ")
-    birth = input("Insira a data de nascimento do funcionario:\n> ")
-    dep = input("Insira o numero do departamento que o funcionario faz parte:\n> ")
+    name = str(input("Insira o nome do funcionario que deseja cadastrar:\n> "))
+    numEmployee = int(input("Insira o numero do funcionario:\n> "))
+    cpf = str(input("Insira o CPF do funcionario:\n> "))
+    address = str(input("Insira o endereco do funcionario:\n> "))
+    salary = float(input("Insira o salario do funcionario:\n> "))
+    gender = str(input("Insira o genero do funcionario:\n> "))
+    birth = str(input("Insira a data de nascimento do funcionario:\n> "))
+    dep = int(input("Insira o numero do departamento que o funcionario faz parte:\n> "))
 
     employee.write(f"{name}|{numEmployee}|{cpf}|{address}|{salary}|{gender}|{birth}|{dep}|\n")
     employee.close()
@@ -30,7 +30,7 @@ def edit_employee():
     
     get_all_employees()
 
-    numEmployeeEdit = input("Insira o número do funcionario que deseja editar:\n> ")
+    numEmployeeEdit = int(input("Insira o número do funcionario que deseja editar:\n> "))
     employeeEdit = int(input("\nInforme o campo que deseja editar:\n0 - Nome\n1 - Numero do funcionario\n2 - CPF\n3 - Endereco\n4 - Salario\n5 - Genero\n6 - Data de Nascimento\n7 - Numero do Departamento\n> "))
     newValue = input("\nDigite o novo valor a ser inserido:\n> ")
     quebraLinha = "\n"
@@ -70,7 +70,7 @@ def delete_employee():
     
     get_all_employees()
     
-    numEmployeeDelete = input("Insira o número do funcionario que deseja deletar:\n")
+    numEmployeeDelete = int(input("Insira o número do funcionario que deseja deletar:\n"))
     foiApagado = False 
 
     for i,v in enumerate(employees):

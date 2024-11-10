@@ -1,8 +1,8 @@
 def criarProjeto():
     arquivo = open("tables/projetos.txt", "a")
-    númeroProjeto = input("Insira o número do projeto que deseja criar:\n> ")
-    nomeProjeto = input("Insira o nome do novo projeto:\n> ")
-    localProjeto = input("Insira o local do novo projeto:\n> ")
+    númeroProjeto = int(input("Insira o número do projeto que deseja criar:\n> "))
+    nomeProjeto = str(input("Insira o nome do novo projeto:\n> "))
+    localProjeto = str(input("Insira o local do novo projeto:\n> "))
     arquivo.write(f"{númeroProjeto}|{nomeProjeto}|{localProjeto}|\n")
     arquivo.close()
     print("\nProjeto criado com sucesso!\n")
@@ -19,7 +19,7 @@ def editarProjeto():
     
     listarProjetos()
 
-    númeroProjetoEditar = input("Insira o número do projeto que deseja editar:\n> ")
+    númeroProjetoEditar = int(input("Insira o número do projeto que deseja editar:\n> "))
     itemProjetoEditar = int(input("\nInsira o item que deseja editar do projeto escolhido:\n0 - Número do Projeto\n1 - Nome do Projeto\n2 - Local do Projeto\n> "))
     valorNovo = input("\nDigite o novo valor a ser inserido:\n> ")
     quebraLinha = "\n"
@@ -57,7 +57,7 @@ def apagarProjeto():
     
     listarProjetos()
     
-    númeroProjetoApagar = input("Insira o número do projeto que deseja apagar:\n> ")
+    númeroProjetoApagar = int(input("Insira o número do projeto que deseja apagar:\n> "))
     foiApagado = False 
 
     for i,v in enumerate(projetos):

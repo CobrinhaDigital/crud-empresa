@@ -2,9 +2,9 @@ def criarDepartamento():
     #cria departamento e pede nome e gerente 
     print("""=== CRIAR DEPARTAMENTO === \b 
     Para criar DEPARTAMENTO, informe -> \b""")
-    nome = input("Nome do departamento: \b") 
-    gerente = input("Nome do gerente: \b") 
-    numero = input("Número do departamento: \b")
+    nome = str(input("Nome do departamento: \b"))
+    gerente = int(input("Número do gerente: \b"))
+    numero = int(input("Número do departamento: \b"))
 
     with open("tables/departamentos.txt", "a") as file: 
         file.write("\n" + nome + " | " + gerente + " | " + numero + "\b")
@@ -20,7 +20,7 @@ def verDepartamento():
 def apagarDepartamento(): 
     print("""=== APAGAR DEPARTAMENTO === \b
     Para apagar departamento, informe ->""")
-    nome = input("Nome do departamento: \b")
+    nome = int(input("Número do departamento: \b"))
     
     with open("tables/departamentos.txt", "r") as file: 
         linhas = file.readlines()
@@ -38,13 +38,13 @@ def apagarDepartamento():
 def editarDepartamento(): 
     print("""=== EDITAR DEPARTAMENTO === \b
     Para editar departamento, selecione -> \b""")
-    selecaoNum = input("""
+    selecaoNum = int(input("""
     0 - Nome do departamento
     1 - Gerente do departamento
-    2 - Número do departamento \n""")
+    2 - Número do departamento \n"""))
     
     if selecaoNum == "0": 
-        nomeAntigo = input("Digite o nome do departamento: \b")
+        nomeAntigo = int(input("Digite o número do departamento: \b"))
         nomeNovo = input("Digite o novo nome do departamento: \b")
         
         with open("tables/departamentos.txt", "r") as file:
@@ -59,8 +59,8 @@ def editarDepartamento():
         file.close()
             
     elif selecaoNum == "1":
-        gerenteAntigo = input("Digite o nome do gerente: \b")
-        gerenteNovo = input("Digite o novo nome do gerente: \b") 
+        gerenteAntigo = int(input("Digite o número do gerente: \b"))
+        gerenteNovo = int(input("Digite o novo número do gerente: \b"))
         
         with open("tables/departamentos.txt", "r") as file:
             linhas = file.readlines()
@@ -74,8 +74,8 @@ def editarDepartamento():
         file.close()
         
     elif selecaoNum == "2": 
-        numeroAntigo = input("Digite o número do departamento: \b")
-        numeroNovo = input("Digite o novo número do departamento: \b")
+        numeroAntigo = int(input("Digite o número do departamento: \b"))
+        numeroNovo = int(input("Digite o novo número do departamento: \b"))
         
         with open("tables/departamentos.txt", "r") as file:
             linhas = file.readlines()
