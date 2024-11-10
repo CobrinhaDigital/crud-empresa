@@ -57,7 +57,7 @@ def apagarProjeto():
     
     listarProjetos()
     
-    númeroProjetoApagar = input("\Insira o número do projeto que deseja apagar:\n> ")
+    númeroProjetoApagar = input("Insira o número do projeto que deseja apagar:\n> ")
     foiApagado = False 
 
     for i,v in enumerate(projetos):
@@ -92,6 +92,7 @@ def listarProjetos():
         print(f"Nº do Projeto: {i[0]}")
         print(f"Nome do Projeto: {i[1]}")
         print(f"Local do Projeto: {i[2]}\n")
+        print("----------------------------------------------------------------------------------------------------")
     
     arquivo.close()
     pass
