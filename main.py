@@ -22,6 +22,8 @@ while True:
             employees.create_employee()
         elif (tabela == 1):
             projects.criarProjeto()
+        elif (tabela == 2):
+            departments.criarDepartamento()
         else:
             print("Tabela nao encontrada!")
     elif (opcao == 1):
@@ -29,6 +31,11 @@ while True:
             employees.get_all_employees()
         elif (tabela == 1):
             projects.listarProjetos()
+        elif (tabela == 2):
+            departments.verDepartamento()
+        elif (tabela == 3):
+            relations.tabela_departamento_projeto()
+            relations.tabela_funcionario_projeto()
         else:
             print("Tabela nao encontrada!")
     elif (opcao == 2):
@@ -36,6 +43,8 @@ while True:
             employees.edit_employee()
         elif (tabela == 1):
             projects.editarProjeto()
+        elif (tabela == 2):
+            departments.editarDepartamento()
         else:
             print("Tabela nao encontrada!")
     elif (opcao == 3):
@@ -43,6 +52,8 @@ while True:
             employees.delete_employee()
         elif (tabela == 1):
             projects.apagarProjeto()
+        elif (tabela == 2):
+            departments.apagarDepartamento()
         else:
             print("Tabela nao encontrada!")
     else:
