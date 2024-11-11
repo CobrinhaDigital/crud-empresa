@@ -1,0 +1,4 @@
+Ulisses Gonçalves Bonfim|456|123456789-41|R. Carambola, 157 - Centro|105632421,4|M|13/08/99|1|
+Daniel Leandro Campos Silva|987|352145645-45|R. Cervos, 24 - Pirambu|3,99|M|03/05/03|3|
+João Guilherme Santos de Sousa|123|421855152-12|R. dos Bois, 171 - Zé Walter|13254325,01|M|14/02/02|2|
+Beatriz Alguma Coisa|4|374616754-15|Av. União, 200 - Bala Vista|1381,47|F|05/09/82|4|

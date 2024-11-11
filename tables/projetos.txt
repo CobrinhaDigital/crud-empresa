@@ -1,3 +1,5 @@
 1|Construção Aquario Fort|Salão Oval|
 21|Lançamento foguete marte|LMC1|
 42|Compra de dois cento de salgado|LIA|
+85|Limpeza de banheiros|WC mascliuno|
+157|Desvio de verba pública do ifce|Coordenação DTEL|
