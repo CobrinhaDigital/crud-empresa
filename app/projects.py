@@ -6,12 +6,12 @@ def criarProjeto():
     nomeProjeto = input("Insira o nome do novo projeto:\n> ")
     localProjeto = input("Insira o local do novo projeto:\n> ")
     
-    quantidadeFuncionários = input("Insira quantos funcionários irão trabalhar nesse projeto:\n> ")
+    quantidadeFuncionários = int(input("Insira quantos funcionários irão trabalhar nesse projeto:\n> "))
     for i in range(quantidadeFuncionários):
         númeroFuncionário = input(f"Insira o número do {i + 1}º funcionário a trabalhar nesse projeto:\n> ")
         relations.add_funcionario_projeto(númeroFuncionário, númeroProjeto)
 
-    quantidadeDepartamentos = input("Insira quantos departamentos irão atuar nesse projeto:\n> ")
+    quantidadeDepartamentos = int(input("Insira quantos departamentos irão atuar nesse projeto:\n> "))
     for i in range(quantidadeDepartamentos):
         númeroDepartamento = input(f"Insira o número do {i + 1}º departamento a atuar nesse projeto:\n> ")
         relations.add_departamento_projeto(númeroDepartamento, númeroProjeto)
