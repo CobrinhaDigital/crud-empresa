@@ -10,7 +10,7 @@ while True:
     if (opcao == 4):
         break
 
-    if (opcao == 1):
+    if (opcao == 1 or opcao == 3):
         print("Informe a tabela em que deseja fazer a acao:\n")
         tabela = int(input("0 - Funcionarios\n1 - Projetos\n2 - Departamentos\n3 - Relações\n> "))
     else:
@@ -54,6 +54,15 @@ while True:
             projects.apagarProjeto()
         elif (tabela == 2):
             departments.apagarDepartamento()
+        elif (tabela == 3):
+            print('Qual relação deseja apagar?\n')
+            escolha = int(input("0 - Departamento-Projeto\n1 - Funcionário-Projeto\n2> "))
+            if(escolha == 0):
+                relations.delete_departamento_projeto()
+            elif(escolha == 1):
+                relations.delete_funcionario_projeto()
+            else:
+                print('Opção inválida!\n')
         else:
             print("Tabela nao encontrada!")
     else:
