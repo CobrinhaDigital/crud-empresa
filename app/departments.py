@@ -2,25 +2,37 @@ def criarDepartamento():
     #cria departamento e pede nome e gerente 
     print("""=== CRIAR DEPARTAMENTO === \b 
     Para criar DEPARTAMENTO, informe -> \b""")
-    nome = str(input("Nome do departamento: \b"))
-    gerente = int(input("Número do gerente: \b"))
-    numero = int(input("Número do departamento: \b"))
+    nome = str(input("Nome do departamento: "))
+    gerente = int(input("Número do gerente: "))
+    numero = int(input("Número do departamento: "))
 
     with open("tables/departamentos.txt", "a") as file: 
-        file.write("\n" + nome + " | " + gerente + " | " + numero + "\b")
+        file.write(f"{nome}|{numero}|{gerente}|\n")
         
     file.close()
 
 def verDepartamento(): 
     #mostra todos os departamentos 
     with open("tables/departamentos.txt", "r") as file: 
-        content = file.read()
-        print(content)
+        content = file.readlines()
+
+        for i,v in enumerate(content):
+            content[i] = content[i].split("|")
+        
+        print("Departamentos atuais:\n")
+
+    for i in content:
+        print(f"Nome do Departamento: {i[0]}")
+        print(f"Número do Departamento: {i[1]}")
+        print(f"Número do Gerente: {i[2]}\n")
+        print("-----------------------------------------------------------------")
+    
+    
 
 def apagarDepartamento(): 
-    print("""=== APAGAR DEPARTAMENTO === \b
-    Para apagar departamento, informe ->""")
-    nome = int(input("Número do departamento: \b"))
+    verDepartamento()
+    print("Para apagar departamento, informe")
+    nome = input("Número do departamento: \b")
     
     with open("tables/departamentos.txt", "r") as file: 
         linhas = file.readlines()
@@ -36,54 +48,35 @@ def apagarDepartamento():
     file.close()
                 
 def editarDepartamento(): 
-    print("""=== EDITAR DEPARTAMENTO === \b
-    Para editar departamento, selecione -> \b""")
-    selecaoNum = int(input("""
-    0 - Nome do departamento
-    1 - Gerente do departamento
-    2 - Número do departamento \n"""))
+    arquivo = open("tables/departamentos.txt", "r")
+    departamentos = arquivo.readlines()
     
-    if selecaoNum == "0": 
-        nomeAntigo = int(input("Digite o número do departamento: \b"))
-        nomeNovo = input("Digite o novo nome do departamento: \b")
-        
-        with open("tables/departamentos.txt", "r") as file:
-            linhas = file.readlines()
-            
-        with open("tables/departamentos.txt", "w") as file:
-            for linha in linhas: 
-                if nomeAntigo in linha:
-                    linha = linha.replace(nomeAntigo, nomeNovo)
-                file.write(linha)
-                
-        file.close()
-            
-    elif selecaoNum == "1":
-        gerenteAntigo = int(input("Digite o número do gerente: \b"))
-        gerenteNovo = int(input("Digite o novo número do gerente: \b"))
-        
-        with open("tables/departamentos.txt", "r") as file:
-            linhas = file.readlines()
-            
-        with open("tables/departamentos.txt", "w") as file:
-            for linha in linhas: 
-                if gerenteAntigo in linha:
-                    linha = linha.replace(gerenteAntigo, gerenteNovo)
-                file.write(linha)
-                
-        file.close()
-        
-    elif selecaoNum == "2": 
-        numeroAntigo = int(input("Digite o número do departamento: \b"))
-        numeroNovo = int(input("Digite o novo número do departamento: \b"))
-        
-        with open("tables/departamentos.txt", "r") as file:
-            linhas = file.readlines()
-            
-        with open("tables/departamentos.txt", "w") as file:
-            for linha in linhas: 
-                if numeroAntigo in linha:
-                    linha = linha.replace(numeroAntigo, numeroNovo)
-                file.write(linha)
-                
-        file.close()
+    for i,v in enumerate(departamentos):
+        departamentos[i] = departamentos[i].split("|")
+    
+    arquivo.close()
+    
+    verDepartamento()
+
+    númeroProjetoEditar = input("Insira o número do departamento que deseja editar:\n> ")
+    itemProjetoEditar = int(input("\nInsira o item que deseja editar do departamento escolhido:\n0 - Nome do Departamento\n1 - Número do Departamento\n2 - Número do Gerente\n> "))
+    valorNovo = input("\nDigite o novo valor a ser inserido:\n> ")
+    foiEditado = False
+
+    for i,v in enumerate(departamentos):
+        if v[1] == númeroProjetoEditar:
+            v[itemProjetoEditar] = valorNovo
+            foiEditado = not foiEditado
+    
+    for i,v in enumerate(departamentos):
+        departamentos[i] = f"{v[0]}|{v[1]}|{v[2]}|\n"
+    
+    arquivo = open("tables/departamentos.txt", "w")
+    arquivo.writelines(departamentos)
+    
+    if foiEditado == True:
+        print("\nCampo editado com sucesso!\n")
+    else:
+        print("\nCampo ou departamento não encontrado!\n")
+    
+    arquivo.close()

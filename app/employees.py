@@ -30,7 +30,7 @@ def edit_employee():
     
     get_all_employees()
 
-    numEmployeeEdit = int(input("Insira o número do funcionario que deseja editar:\n> "))
+    numEmployeeEdit = input("Insira o número do funcionario que deseja editar:\n> ")
     employeeEdit = int(input("\nInforme o campo que deseja editar:\n0 - Nome\n1 - Numero do funcionario\n2 - CPF\n3 - Endereco\n4 - Salario\n5 - Genero\n6 - Data de Nascimento\n7 - Numero do Departamento\n> "))
     newValue = input("\nDigite o novo valor a ser inserido:\n> ")
     quebraLinha = "\n"
@@ -70,7 +70,7 @@ def delete_employee():
     
     get_all_employees()
     
-    numEmployeeDelete = int(input("Insira o número do funcionario que deseja deletar:\n"))
+    numEmployeeDelete = input("Insira o número do funcionario que deseja deletar:\n")
     foiApagado = False 
 
     for i,v in enumerate(employees):

@@ -2,18 +2,18 @@ import app.relations as relations
 
 def criarProjeto():
     arquivo = open("tables/projetos.txt", "a")
-    númeroProjeto = int(input("Insira o número do projeto que deseja criar:\n> "))
-    nomeProjeto = str(input("Insira o nome do novo projeto:\n> "))
-    localProjeto = str(input("Insira o local do novo projeto:\n> "))
+    númeroProjeto = input("Insira o número do projeto que deseja criar:\n> ")
+    nomeProjeto = input("Insira o nome do novo projeto:\n> ")
+    localProjeto = input("Insira o local do novo projeto:\n> ")
     
-    quantidadeFuncionários = int(input("Insira quantos funcionários irão trabalhar nesse projeto:\n> "))
-    for i in quantidadeFuncionários:
-        númeroFuncionário = int(input(f"Insira o número do {i}º funcionário a trabalhar nesse projeto:\n> "))
+    quantidadeFuncionários = input("Insira quantos funcionários irão trabalhar nesse projeto:\n> ")
+    for i in range(quantidadeFuncionários):
+        númeroFuncionário = input(f"Insira o número do {i + 1}º funcionário a trabalhar nesse projeto:\n> ")
         relations.add_funcionario_projeto(númeroFuncionário, númeroProjeto)
 
-    quantidadeDepartamentos = int(input("Insira quantos departamentos irão atuar nesse projeto:\n> "))
-    for i in quantidadeDepartamentos:
-        númeroDepartamento = int(input(f"Insira o número do {i}º departamento a atuar nesse projeto:\n> "))
+    quantidadeDepartamentos = input("Insira quantos departamentos irão atuar nesse projeto:\n> ")
+    for i in range(quantidadeDepartamentos):
+        númeroDepartamento = input(f"Insira o número do {i + 1}º departamento a atuar nesse projeto:\n> ")
         relations.add_departamento_projeto(númeroDepartamento, númeroProjeto)
 
     arquivo.write(f"{númeroProjeto}|{nomeProjeto}|{localProjeto}|\n")
@@ -32,7 +32,7 @@ def editarProjeto():
     
     listarProjetos()
 
-    númeroProjetoEditar = int(input("Insira o número do projeto que deseja editar:\n> "))
+    númeroProjetoEditar = input("Insira o número do projeto que deseja editar:\n> ")
     itemProjetoEditar = int(input("\nInsira o item que deseja editar do projeto escolhido:\n0 - Número do Projeto\n1 - Nome do Projeto\n2 - Local do Projeto\n> "))
     valorNovo = input("\nDigite o novo valor a ser inserido:\n> ")
     quebraLinha = "\n"
@@ -70,7 +70,7 @@ def apagarProjeto():
     
     listarProjetos()
     
-    númeroProjetoApagar = int(input("Insira o número do projeto que deseja apagar:\n> "))
+    númeroProjetoApagar = input("Insira o número do projeto que deseja apagar:\n> ")
     foiApagado = False 
 
     for i,v in enumerate(projetos):

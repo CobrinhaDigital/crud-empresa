@@ -58,5 +58,3 @@ while True:
             print("Tabela nao encontrada!")
     else:
         print("Opcao nao encontrada!")
-
-print("ALL IS ON BY GOD")
