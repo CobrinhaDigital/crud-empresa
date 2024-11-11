@@ -1,10 +1,7 @@
 def criarDepartamento(): 
-    #cria departamento e pede nome e gerente 
-    print("""=== CRIAR DEPARTAMENTO === \b 
-    Para criar DEPARTAMENTO, informe -> \b""")
-    nome = str(input("Nome do departamento: "))
-    gerente = int(input("Número do gerente: "))
-    numero = int(input("Número do departamento: "))
+    nome = str(input("Insira o nome do departamento que deseja criar:\n> "))
+    gerente = int(input("Insira o número do novo gerente:\n> "))
+    numero = int(input("Insira o número do novo departamento:\n> "))
 
     with open("tables/departamentos.txt", "a") as file: 
         file.write(f"{nome}|{numero}|{gerente}|\n")
@@ -31,8 +28,7 @@ def verDepartamento():
 
 def apagarDepartamento(): 
     verDepartamento()
-    print("Para apagar departamento, informe")
-    nome = input("Número do departamento: \b")
+    nome = input("Insira o número do departamento que deseja apagar:\n> ")
     
     with open("tables/departamentos.txt", "r") as file: 
         linhas = file.readlines()

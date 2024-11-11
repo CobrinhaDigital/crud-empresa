@@ -70,7 +70,7 @@ def delete_employee():
     
     get_all_employees()
     
-    numEmployeeDelete = input("Insira o número do funcionario que deseja deletar:\n")
+    numEmployeeDelete = input("Insira o número do funcionario que deseja deletar:\n> ")
     foiApagado = False 
 
     for i,v in enumerate(employees):
@@ -85,7 +85,7 @@ def delete_employee():
     archive.writelines(employees)
 
     if foiApagado == True:
-        print("\nFuncionario deletado com sucesso!\n>")
+        print("\nFuncionario deletado com sucesso!\n")
     else:
         print("\nFuncionario não encontrado!\n")
 
